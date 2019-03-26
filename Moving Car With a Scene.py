@@ -4,8 +4,6 @@ from OpenGL.GLUT import *
 import numpy as np
 from math import *
 
-
-
 def draw_XYZ():
     glBegin(GL_LINES)
     glColor3f(1, 0, 0)
@@ -64,12 +62,6 @@ def draw():
     glLoadIdentity()
     glClear(GL_COLOR_BUFFER_BIT)
 
-   
-
-
-
-
-
      ###ROAD####
     glColor(.3, .3, .3)
     glBegin(GL_POLYGON)
@@ -79,17 +71,6 @@ def draw():
     glVertex(-35, 0, 5)
     glEnd()
     glLoadIdentity()
-
-     
-
-
-
-
-
-
-
-
-
 
     #grass
     glColor(138/255, 229/255, 25/255)
@@ -106,11 +87,8 @@ def draw():
     glVertex(35, 0, -70)
     glEnd()
 
-
-
- #Pine tree#####
+    #Pine Trees
     
-
     glTranslate(-1,3,-15)
     glRotate(180,1,0,0)
     glScale(.015,.02,.02)
@@ -203,7 +181,7 @@ def draw():
     glVertex(240,600,0)
     glEnd()
     glLoadIdentity()
-######
+##########
     glTranslate(-36,3,-15)
     glRotate(180,1,0,0)
     glScale(.015,.02,.02)
@@ -226,6 +204,7 @@ def draw():
     glVertex(420,120,0)
     glVertex(300,0,0)
     glEnd()
+    
     glColor(163/255,95/255,44/255)
     glBegin(GL_QUADS)
     glVertex(240,480,0)
@@ -257,6 +236,7 @@ def draw():
     glVertex(420,120,0)
     glVertex(300,0,0)
     glEnd()
+    
     glColor(163/255,95/255,44/255)
     glBegin(GL_QUADS)
     glVertex(240,480,0)
@@ -288,6 +268,7 @@ def draw():
     glVertex(420,120,0)
     glVertex(300,0,0)
     glEnd()
+    
     glColor(163/255,95/255,44/255)
     glBegin(GL_QUADS)
     glVertex(240,480,0)
@@ -320,6 +301,7 @@ def draw():
     glVertex(420,120,0)
     glVertex(300,0,0)
     glEnd()
+    
     glColor(163/255,95/255,44/255)
     glBegin(GL_QUADS)
     glVertex(240,480,0)
@@ -328,44 +310,36 @@ def draw():
     glVertex(240,600,0)
     glEnd()
     glLoadIdentity()
-
-
  
     #draw_XYZ()
     
-   
-    
-    
-    glLoadIdentity()
-    
+    #Car Body
     glColor3f(1, 0, 0)
     glTranslate(x, 0, car_z)
     glScale(1, 0.25, 0.5)
     glutWireCube(5)
-
     glLoadIdentity()
     
     glTranslate(x, 5*0.25, car_z)
     glScale(0.5, 0.25, 0.5)
     glutWireCube(5)
-
     glColor3f(0, 0, 1)
     glLoadIdentity()
     glTranslate(x+0.5*5, -0.5 * 0.25*5, 0.5 * 0.5*5+car_z)
     glRotate(angle, 0, 0, 1)
     glutWireTorus(0.125, 0.5, 10, 10)
-
     glLoadIdentity()
+    
     glTranslate(x+0.5*5, -0.5 * 0.25*5, - 0.5 * 0.5*5+car_z)
     glRotate(angle, 0, 0, 1)
     glutWireTorus(0.125, 0.5, 10, 10)
-
     glLoadIdentity()
+    
     glTranslate(x-0.5*5, -0.5 * 0.25*5, -0.5 * 0.5*5+car_z)
     glRotate(angle, 0, 0, 1)
     glutWireTorus(0.125, 0.5, 10, 10)
-
     glLoadIdentity()
+    
     glTranslate(x-0.5*5, -0.5 * 0.25*5, 0.5 * 0.5*5+car_z)
     glRotate(angle, 0, 0, 1)
     glutWireTorus(0.125, 0.5, 10, 10)
@@ -380,15 +354,9 @@ def draw():
     glutSolidSphere(.15,100,100)
     glLoadIdentity()
 
-    #Moving Sphere
-    #glTranslate(-x,0,0)
-    #glutSolidSphere(.5,100,100)
-
-
     glutSwapBuffers()
 
     if forward:
-        
         angle -= 0.1
         x += 0.005
         if x > 5:
